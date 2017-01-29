@@ -3,7 +3,56 @@ img{
   margin: auto;
 }
 
-.devise{
-  width: 100%;
-  margin: auto;
+sh-device{
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  .device{
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+    background-repeat: no-repeat;
+    background-position: center center;
+    z-index: 49;
+    &.dragover{
+      sh-fragment{
+        position: relative;
+        z-index: 49;
+      }
+    }
+  }
+  img{
+    position: absolute;
+    z-index: 48;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+  }
+}
+
+sh-fragment, sh-fragment > div{
+  display: block;
+  width: inherit;
+  height: inherit;
+  .fragment{
+    position: relative;
+  }
+}
+
+
+sh-fragment{
+  position: relative;
+  > .dragover{
+    .fragment::after{
+      position: absolute;
+      background-color: blue;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
 }
