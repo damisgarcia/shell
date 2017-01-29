@@ -7,6 +7,7 @@ sh-device{
   display: flex;
   align-items: center;
   height: 100vh;
+  padding: 24px 0px;
   position: relative;
   .device{
     display: inline-block;
@@ -44,15 +45,23 @@ sh-fragment, sh-fragment > div{
 
 
 sh-fragment{
-  position: relative;
+  overflow: hidden;
+  .fragment-edit{
+    position: absolute;
+    top: -16px;
+    right: -16px;
+    z-index: 100;
+  }
   > .dragover{
     .fragment::after{
       position: absolute;
       background-color: blue;
+      border: 2px solid white;
       top: 0;
       bottom: 0;
       left: 0;
       right: 0;
+      z-index: 100;
     }
   }
 }

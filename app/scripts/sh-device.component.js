@@ -3,13 +3,31 @@
 var shDevice = {
   templateUrl: "templates/sh-device.html",
   controller: function($element){
-    document.addEventListener("dragenter", function( event ) {
-      $($element).find(".device").addClass('dragover')
-    }, false);
+    var element = $element
 
-    document.addEventListener("dragover", function( event ) {
-      $($element).find(".device").removeClass('dragover')
-    }, false);
+    // Prevent
+    window.addEventListener("drop",function(e){
+      e = e || event;
+      e.preventDefault();
+      $(element).find(".device").removeClass('dragover')
+    },false);
+
+    window.addEventListener("dragover",function(e){
+      e = e || event;
+      e.preventDefault();
+    },false);
+
+    window.addEventListener("dragend",function(e){
+      e = e || event;
+      e.preventDefault();
+      $(element).find(".device").removeClass('dragover')
+    },false);
+
+    window.addEventListener("dragenter",function(e){
+      e = e || event;
+      e.preventDefault();
+      $(element).find(".device").addClass('dragover')
+    },false);
   }
 }
 

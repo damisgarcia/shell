@@ -1,10 +1,12 @@
 'use strict'
 
-var shFragmentCtrl = function(){
+var shFragmentCtrl = function($element){
   var self = this
+  var element = $element
 
   self.loadPicture = function(file){
     self.file = file
+    element.parent().removeClass('dragover')
   }
 }
 

@@ -1,5 +1,6 @@
+<button class='fragment-edit' ng-show='$ctrl.file'>Editar Imagem</button>
 <div ngf-drop="$ctrl.loadPicture($file)" ngf-drag-over-class="'dragover'" ngf-pattern="'image/*'">
   <div class='fragment' style="width: 100%; height: 100%;">
-    <img ngf-src="$ctrl.file || 'images/iphone6-background.png'">
+    <img ngf-src="$ctrl.file || 'images/iphone6-background.png'" draggable="false">
   </div>
 </div>
