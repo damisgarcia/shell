@@ -37,13 +37,8 @@ gulp.task('scripts', () => {
 });
 
 gulp.task('templates', () => {
-  return gulp.src('app/templates/**/*.html')
-    .pipe($.plumber())
-    .pipe($.sourcemaps.init())
-    .pipe($.babel())
-    .pipe($.sourcemaps.write('.'))
-    .pipe(gulp.dest('.tmp/scripts'))
-    .pipe(reload({stream: true}));
+  return gulp.src('app/templates/**/*')
+    .pipe(gulp.dest('dist/templates'));
 });
 
 function lint(files, options) {
@@ -167,7 +162,7 @@ gulp.task('wiredep', () => {
     .pipe(gulp.dest('app'));
 });
 
-gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
+gulp.task('build', ['lint', 'html', 'templates', 'images', 'fonts', 'extras'], () => {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 
