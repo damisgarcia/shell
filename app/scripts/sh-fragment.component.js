@@ -20,7 +20,7 @@ var shFragmentCtrl = function($scope, $element){
 }
 
 var shFragment = {
-  templateUrl: "templates/sh-fragment.html",
+  templateUrl: 'templates/sh-fragment.html',
   controller: shFragmentCtrl
 }
 

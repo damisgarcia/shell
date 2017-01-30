@@ -3,7 +3,7 @@
 var ApplicationCtrl = function(){
   var self = this
 
-  console.log("Loaded!")
+  console.log('Loaded!')
 
   return self
 }

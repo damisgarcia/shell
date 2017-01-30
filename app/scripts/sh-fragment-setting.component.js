@@ -28,14 +28,14 @@ var shFragmentSettingCtrl = function($rootScope, $element){
 
   self.moveTop = function(e){
     if(self.fragment.top < 0){
-      self.fragment.top += (self.fragment.element.find("img").height() * MOVEPROGRESS)
+      self.fragment.top += (self.fragment.element.find('img').height() * MOVEPROGRESS)
     }
   }
 
   self.moveBottom = function(e){
     // Math.abs send number to negative value
     if(self.fragment.top > toNegative(fragmentHeigth)){
-      self.fragment.top -= (self.fragment.element.find("img").height() * MOVEPROGRESS)
+      self.fragment.top -= (self.fragment.element.find('img').height() * MOVEPROGRESS)
     }
   }
 
@@ -44,8 +44,8 @@ var shFragmentSettingCtrl = function($rootScope, $element){
 
     if(angular.isObject(self.fragment)){
       $rootScope.$editing = true
-      fragmentWidth = self.fragment.element.find("img").width()
-      fragmentHeigth = self.fragment.element.find("img").height()
+      fragmentWidth = self.fragment.element.find('img').width()
+      fragmentHeigth = self.fragment.element.find('img').height()
     } else{
       $rootScope.$editing = false
     }
@@ -55,7 +55,7 @@ var shFragmentSettingCtrl = function($rootScope, $element){
 }
 
 var shFragmentSetting = {
-  templateUrl: "templates/sh-fragment-setting.html",
+  templateUrl: 'templates/sh-fragment-setting.html',
   controller: shFragmentSettingCtrl
 }
 
