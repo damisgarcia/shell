@@ -28,9 +28,8 @@
     <![endif]-->
 
     <div class="container">
-      <sh-device>
-
-      </sh-device>
+      <sh-device></sh-device>
+      <sh-fragment-setting></sh-fragment-setting>
     </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
@@ -68,11 +67,13 @@
     <!-- endbuild -->
 
     <!-- build:js scripts/main.js -->
+    <script src="scripts/pollify.js"></script>
     <script src="scripts/app.js"></script>
     <script src="scripts/application.ctrl.js"></script>
 
     <script src="scripts/sh-device.component.js"></script>
     <script src="scripts/sh-fragment.component.js"></script>
+    <script src="scripts/sh-fragment-setting.component.js"></script>
     <!-- endbuild -->
   </body>
 </html>

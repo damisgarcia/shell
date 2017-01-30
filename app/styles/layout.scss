@@ -6,17 +6,30 @@ img{
 sh-device{
   display: flex;
   align-items: center;
-  height: 100vh;
-  padding: 24px 0px;
+  height: 100%;
+  padding: 0px;
   position: relative;
   .device{
     display: inline-block;
     position: relative;
-    overflow: hidden;
     margin: auto;
     background-repeat: no-repeat;
     background-position: center center;
+    background-color: #f4f4f4;
     z-index: 49;
+    &:not(.crop){
+      .device-background{
+        visibility: hidden;
+      }
+    }
+    &.crop{
+      overflow: hidden;
+    }
+    &:hover{
+      sh-fragment .controls{
+        visibility: visible;
+      }
+    }
     &.dragover{
       sh-fragment{
         position: relative;
@@ -45,18 +58,26 @@ sh-fragment, sh-fragment > div{
 
 
 sh-fragment{
-  overflow: hidden;
-  .fragment-edit{
+  .controls{
+    visibility: hidden;
     position: absolute;
-    top: -16px;
-    right: -16px;
+    text-align: right;
+    top: 8px;
+    left: 0;
+    right: 0;
     z-index: 100;
   }
+  // .fragment-edit{
+  //   position: absolute;
+  //   top: -16px;
+  //   right: -16px;
+  //   z-index: 100;
+  // }
   > .dragover{
     .fragment::after{
       position: absolute;
       background-color: blue;
-      border: 2px solid white;
+      border: 2px solid red;
       top: 0;
       bottom: 0;
       left: 0;
@@ -64,4 +85,20 @@ sh-fragment{
       z-index: 100;
     }
   }
+}
+
+.device:not(.crop) sh-fragment .fragment::after{
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 60;
+  border: 2px solid white;
+  content: ' ';
+}
+
+sh-fragment-setting{
+  position: relative;
+  display: block;
+  z-index: 100;
 }

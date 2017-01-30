@@ -3,6 +3,7 @@
 var shDevice = {
   templateUrl: "templates/sh-device.html",
   controller: function($element){
+    var self = this
     var element = $element
 
     // Prevent
@@ -29,6 +30,8 @@ var shDevice = {
       $(element).find(".device").addClass('dragover')
     },false);
   }
+
+  return self
 }
 
 angular.module('shellderApp').component('shDevice', shDevice)
