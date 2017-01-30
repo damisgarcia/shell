@@ -1,6 +1,6 @@
 'use strict'
 
-var shDeviceCtrl = unction($element){
+var shDeviceCtrl = function($element){
   var self = this
   var element = $element
 
