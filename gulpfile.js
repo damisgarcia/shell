@@ -36,6 +36,16 @@ gulp.task('scripts', () => {
     .pipe(reload({stream: true}));
 });
 
+gulp.task('templates', () => {
+  return gulp.src('app/templates/**/*.html')
+    .pipe($.plumber())
+    .pipe($.sourcemaps.init())
+    .pipe($.babel())
+    .pipe($.sourcemaps.write('.'))
+    .pipe(gulp.dest('.tmp/scripts'))
+    .pipe(reload({stream: true}));
+});
+
 function lint(files, options) {
   return gulp.src(files)
     .pipe($.eslint({ fix: true }))
