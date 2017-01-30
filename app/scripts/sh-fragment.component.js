@@ -19,6 +19,8 @@ var shFragmentCtrl = function($scope, $element){
   }
 }
 
+shFragmentCtrl.$inject = ['$scope', '$element']
+
 var shFragment = {
   templateUrl: 'templates/sh-fragment.html',
   controller: shFragmentCtrl

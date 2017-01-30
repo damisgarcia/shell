@@ -54,6 +54,8 @@ var shFragmentSettingCtrl = function($rootScope, $element){
   return self
 }
 
+shFragmentSettingCtrl.$inject = ['$rootScope', '$element']
+
 var shFragmentSetting = {
   templateUrl: 'templates/sh-fragment-setting.html',
   controller: shFragmentSettingCtrl
