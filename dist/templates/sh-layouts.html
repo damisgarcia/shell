@@ -1,0 +1,59 @@
+<div class="row">
+  <div class="col-md-2" ng-repeat="l in $ctrl.layouts">
+    <sh-layout ng-click="$ctrl.update(l)">
+      <sh-layout-divider ng-repeat="divider in l" class='{{divider.type}}'>
+        <sh-layout-rect ng-repeat="n in [] | range:divider.value"></sh-layout-rect>
+      </sh-layout-divider>
+    </sh-layout>
+  </div>
+</div>
+  <!-- <div class="col-md-2">
+    <sh-layout>
+      <sh-layout-column>
+        <sh-layout-rect ng-repeat="n in [] | range:2"></sh-layout-rect>
+      </sh-layout-column>
+    </sh-layout>
+  </div>
+  <div class="col-md-2">
+    <sh-layout>
+      <sh-layout-column>
+        <sh-layout-rect ng-repeat="n in [] | range:3"></sh-layout-rect>
+      </sh-layout-column>
+    </sh-layout>
+  </div>
+  <div class="col-md-2">
+    <sh-layout>
+      <sh-layout-row>
+        <sh-layout-rect ng-repeat="n in [] | range:2"></sh-layout-rect>
+      </sh-layout-row>
+    </sh-layout>
+  </div>
+  <div class="col-md-2">
+    <sh-layout>
+      <sh-layout-row>
+        <sh-layout-rect ng-repeat="n in [] | range:3"></sh-layout-rect>
+      </sh-layout-row>
+    </sh-layout>
+  </div>
+  <div class="col-md-2">
+    <sh-layout>
+      <sh-layout-row ng-repeat="n in [] | range:3">
+        <sh-layout-rect ng-repeat="n in [] | range:2"></sh-layout-rect>
+      </sh-layout-row>
+    </sh-layout>
+  </div>
+  <div class="col-md-2">
+    <sh-layout>
+      <sh-layout-row ng-repeat="n in [] | range:4">
+        <sh-layout-rect ng-repeat="n in [] | range:2"></sh-layout-rect>
+      </sh-layout-row>
+    </sh-layout>
+  </div>
+  <div class="col-md-2">
+    <sh-layout>
+      <sh-layout-row ng-repeat="n in [] | range:5">
+        <sh-layout-rect ng-repeat="n in [] | range:2"></sh-layout-rect>
+      </sh-layout-row>
+    </sh-layout>
+  </div>
+</div> -->

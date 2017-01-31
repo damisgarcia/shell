@@ -1,0 +1,8 @@
+<div class="controls">
+  <button class='fragment-edit' ng-show='$ctrl.file' ng-click="$ctrl.toggleSetting()">Ajustar</button>
+</div>
+<div ngf-drop="$ctrl.loadPicture($file)" ngf-drag-over-class="'dragover'" ngf-pattern="'image/*'">
+  <div class='fragment' ng-class="{'editing': $ctrl.$editing}">
+    <img ngf-src="$ctrl.file" draggable="false" sh-fragment-draggable="$ctrl" parent=".device" style="top:{{$ctrl.top}}px;left:{{$ctrl.left}}px;transform: scale({{$ctrl.scale}});">
+  </div>
+</div>
