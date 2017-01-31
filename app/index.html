@@ -29,9 +29,26 @@
 
     <div class="container-fluid">
       <nav class='left-menu'>
-        <h3>Layouts</h3>
-        <hr>
-        <sh-layouts></sh-layouts>
+        <ul class="nav nav-tabs">
+          <li><a data-toggle="tab" href="#devices">Devices</a></li>
+          <li class="active"><a data-toggle="tab" href="#layouts">Layouts</a></li>
+          <li><a data-toggle="tab" href="#filters">Filters</a></li>
+          <!-- <li><a data-toggle="tab" href="#menu2">Menu 2</a></li> -->
+        </ul>
+
+        <div class="tab-content">
+          <div id="devices" class="tab-pane fade">
+            <h3>Menu 2</h3>
+            <p>Some content in menu 2.</p>
+          </div>
+          <div id="layouts" class="tab-pane fade in active">
+            <sh-layouts></sh-layouts>
+          </div>
+          <div id="filters" class="tab-pane fade">
+            <h3>Menu 1</h3>
+            <p>Some content in menu 1.</p>
+          </div>
+        </div>
       </nav>
       <div class="col-md-9 col-xs-offset-3">
         <div class="container">
