@@ -34,6 +34,7 @@ sh-device{
       }
     }
     &.dragover{
+      border: 2px #444 inset;
       sh-fragment{
         position: relative;
         z-index: 49;
@@ -56,6 +57,12 @@ sh-device{
   }
 }
 
+sh-device sh-layout{
+  min-height: 0px;
+  max-height: none;
+  flex: 1;
+}
+
 sh-fragment, sh-fragment > div:not(.controls){
   display: block;
   .fragment{
@@ -70,6 +77,7 @@ sh-fragment{
   cursor: move;
   overflow: hidden;
   position: relative;
+  border: 1px solid transparentize(#f4f4f4, 0.7);
   > div:not(.controls){
     flex: 1;
   }
@@ -77,7 +85,7 @@ sh-fragment{
     visibility: hidden;
     position: absolute;
     text-align: right;
-    top: 8px;
+    top: 0;
     left: 0;
     right: 0;
     z-index: 100;
@@ -85,8 +93,6 @@ sh-fragment{
   > .dragover{
     .fragment::after{
       position: absolute;
-      background-color: blue;
-      border: 2px solid red;
       top: 0;
       bottom: 0;
       left: 0;
@@ -103,7 +109,7 @@ sh-fragment{
   width: 100%;
   height: 100%;
   z-index: 60;
-  border: 2px solid white;
+  background-color: transparentize(blue, 0.7);
   content: ' ';
 }
 
@@ -115,4 +121,37 @@ sh-fragment-setting{
 
 [sh-draggable]{
   cursor: move;
+}
+
+
+sh-layout{
+  display: flex;
+  flex-direction: column;
+  margin: 3px 0px;
+  min-height: 60px;
+  max-height: 60px;
+  &:hover{
+    cursor: pointer;
+  }
+  sh-layout-divider.flex-column, sh-layout-divider.flex-row{
+    flex: 1;
+    sh-layout-rect{
+      display: flex;
+      flex: 1;
+      background-color: #ccc;
+      margin: 1px;
+    }
+  }
+  sh-layout-divider.flex-row{
+    display: flex;
+    flex-direction: row;
+  }
+  sh-layout-divider.flex-column{
+    display: flex;
+    flex-direction: column;
+    sh-layout-rect{
+      flex:1;
+      min-height: 0px;
+    }
+  }
 }

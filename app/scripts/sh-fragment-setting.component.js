@@ -14,7 +14,7 @@ var shFragmentSettingCtrl = function($rootScope, $element){
 
   var toNegative = function(number){
     return number * -1
-  }  
+  }
 
   self.moveLeft = function(e){
     if(self.fragment.left < 0){

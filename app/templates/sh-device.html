@@ -1,7 +1,10 @@
 <div class='device' style="width:280px;height:560px;max-height:560px;" ng-class="{'crop': !$root.$editing}">
-  <div class="fragment-container">
-    <sh-fragment></sh-fragment>
-    <sh-fragment></sh-fragment>
+  <div class="fragment-container" style="background-image: url('images/iphone6-background.png');">
+    <sh-layout>
+      <sh-layout-divider ng-repeat="divider in $ctrl.layout" class='{{divider.type}}'>
+        <sh-fragment ng-repeat="n in [] | range:divider.value"></sh-fragment>
+      </sh-layout-divider>
+    </sh-layout>
   </div>
   <img src="images/iphone6-background-border.png" class="device-background" draggable="false">
 </div>

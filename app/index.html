@@ -27,9 +27,18 @@
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div class="container">
-      <sh-device></sh-device>
-      <sh-fragment-setting></sh-fragment-setting>
+    <div class="container-fluid">
+      <nav class='left-menu'>
+        <h3>Layouts</h3>
+        <hr>
+        <sh-layouts></sh-layouts>
+      </nav>
+      <div class="col-md-9 col-xs-offset-3">
+        <div class="container">
+          <sh-device></sh-device>
+          <sh-fragment-setting></sh-fragment-setting>
+        </div>
+      </div>
     </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
@@ -70,7 +79,10 @@
     <script src="scripts/pollify.js"></script>
     <script src="scripts/app.js"></script>
     <script src="scripts/application.ctrl.js"></script>
+    <script src="scripts/range.filter.js"></script>
 
+    <script src="scripts/sh-layout.component.js"></script>
+    <script src="scripts/sh-layouts.component.js"></script>
     <script src="scripts/sh-device.component.js"></script>
     <script src="scripts/sh-fragment.component.js"></script>
     <script src="scripts/sh-fragment-setting.component.js"></script>

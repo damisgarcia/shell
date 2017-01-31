@@ -15,6 +15,7 @@ var shFragmentCtrl = function($scope, $element){
 
   self.toggleSetting = function(){
     self.$setting = !self.$setting
+    self.$editing = !self.$editing
     self.$setting ? $scope.$emit('fragment:setting:enable', self) : $scope.$emit('fragment:setting:enable', null)
   }
 }

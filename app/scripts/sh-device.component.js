@@ -1,8 +1,11 @@
 'use strict'
 
-var shDeviceCtrl = function($element){
+var shDeviceCtrl = function($element, $rootScope){
   var self = this
   var element = $element
+
+
+  self.layout = [{ type: 'flex-row', value: 1}]
 
   // Prevent
   window.addEventListener('drop',function(e){
@@ -28,10 +31,14 @@ var shDeviceCtrl = function($element){
     $(element).find('.device').addClass('dragover')
   },false);
 
+  $rootScope.$on('update:layout', function(e, layout){
+    self.layout = layout
+  })
+
   return self
 }
 
-shDeviceCtrl.$inject = ['$element']
+shDeviceCtrl.$inject = ['$element', '$rootScope']
 
 
 var shDevice = {
