@@ -1,3 +1,6 @@
+body{
+  position: relative;
+}
 img{
   display: block;
   margin: auto;
@@ -36,6 +39,12 @@ sh-device{
         z-index: 49;
       }
     }
+    .fragment-container{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+    }
   }
   img{
     position: absolute;
@@ -47,10 +56,8 @@ sh-device{
   }
 }
 
-sh-fragment, sh-fragment > div{
+sh-fragment, sh-fragment > div:not(.controls){
   display: block;
-  width: inherit;
-  height: inherit;
   .fragment{
     position: relative;
   }
@@ -58,6 +65,14 @@ sh-fragment, sh-fragment > div{
 
 
 sh-fragment{
+  display: flex;
+  flex: auto;
+  cursor: move;
+  overflow: hidden;
+  position: relative;
+  > div:not(.controls){
+    flex: 1;
+  }
   .controls{
     visibility: hidden;
     position: absolute;
@@ -67,12 +82,6 @@ sh-fragment{
     right: 0;
     z-index: 100;
   }
-  // .fragment-edit{
-  //   position: absolute;
-  //   top: -16px;
-  //   right: -16px;
-  //   z-index: 100;
-  // }
   > .dragover{
     .fragment::after{
       position: absolute;
@@ -89,6 +98,7 @@ sh-fragment{
 
 .device:not(.crop) sh-fragment .fragment::after{
   display: block;
+  overflow: hidden;
   position: relative;
   width: 100%;
   height: 100%;
@@ -101,4 +111,8 @@ sh-fragment-setting{
   position: relative;
   display: block;
   z-index: 100;
+}
+
+[sh-draggable]{
+  cursor: move;
 }

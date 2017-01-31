@@ -2,7 +2,7 @@
   <button class='fragment-edit' ng-show='$ctrl.file' ng-click="$ctrl.toggleSetting()">Ajustar</button>
 </div>
 <div ngf-drop="$ctrl.loadPicture($file)" ngf-drag-over-class="'dragover'" ngf-pattern="'image/*'">
-  <div class='fragment' style="width: 100%; height: 100%;">
-    <img ngf-src="$ctrl.file || 'images/iphone6-background.png'" draggable="false" style="top:{{$ctrl.top}}px;left:{{$ctrl.left}}px;transform: scale({{$ctrl.scale}});">
+  <div class='fragment'>
+    <img ngf-src="$ctrl.file" draggable="false" sh-fragment-draggable="$ctrl" parent=".device" style="top:{{$ctrl.top}}px;left:{{$ctrl.left}}px;transform: scale({{$ctrl.scale}});">
   </div>
 </div>

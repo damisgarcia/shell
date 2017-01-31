@@ -7,10 +7,14 @@ var shFragmentSettingCtrl = function($rootScope, $element){
   var MOVEPROGRESS = 0.02
   var fragmentWidth = null
   var fragmentHeigth = null
+  var startY = 0
+  var startX = 0
+  var x = 0
+  var y = 0
 
   var toNegative = function(number){
     return number * -1
-  }
+  }  
 
   self.moveLeft = function(e){
     if(self.fragment.left < 0){
@@ -19,7 +23,6 @@ var shFragmentSettingCtrl = function($rootScope, $element){
   }
 
   self.moveRight = function(e){
-    console.log( toNegative(fragmentWidth))
     // Math.abs send number to negative value
     if(self.fragment.left > toNegative(fragmentWidth)){
       self.fragment.left -= (fragmentWidth * MOVEPROGRESS)
@@ -27,14 +30,14 @@ var shFragmentSettingCtrl = function($rootScope, $element){
   }
 
   self.moveTop = function(e){
-    if(self.fragment.top < 0){
+    if(self.fragment.top > toNegative(fragmentHeigth)){
       self.fragment.top += (self.fragment.element.find('img').height() * MOVEPROGRESS)
     }
   }
 
   self.moveBottom = function(e){
     // Math.abs send number to negative value
-    if(self.fragment.top > toNegative(fragmentHeigth)){
+    if(self.fragment.top < fragmentHeigth){
       self.fragment.top -= (self.fragment.element.find('img').height() * MOVEPROGRESS)
     }
   }

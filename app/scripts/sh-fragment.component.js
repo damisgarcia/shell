@@ -6,8 +6,8 @@ var shFragmentCtrl = function($scope, $element){
 
   self.loadPicture = function(file){
     self.file = file
-    self.top = 0
     self.left = 0
+    self.top =  0
     self.scale = 1
     self.element = element
     element.parent().removeClass('dragover')
