@@ -4,12 +4,11 @@ var shFlickrGalleryCtrl = function(Flickr){
   var self = this
 
   self.url_for = function(photo){
-    return "https://farm"+ photo.farm +".staticflickr.com/"+ photo.server +"/"+ photo.id +"_"+ photo.secret +".jpg"    
+    return "https://farm"+ photo.farm +".staticflickr.com/"+ photo.server +"/"+ photo.id +"_"+ photo.secret +".jpg"
   }
 
   self.$onInit = function(){
     Flickr.photos.search({tags: "background,flowers,summer",per_page: 30}).then(function(response){
-      console.log(response)
       self.photos = response.data.photos.photo
     })
   }
