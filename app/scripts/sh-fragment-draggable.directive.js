@@ -4,8 +4,8 @@ angular.module('shellderApp')
   .directive('shFragmentDraggable', ['$document', function($document) {
     return {
       scope: {
-        shFragmentDraggable: "=",
-        parent: "@"
+        shFragmentDraggable: '=',
+        parent: '@'
       },
       link: function(scope, element, attr) {
         var startX = 0, startY = 0, x = 0, y = 0;

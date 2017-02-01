@@ -64,7 +64,7 @@ shLayoutsCtrl.$inject = ['$scope']
 
 var shLayouts = {
   controller: shLayoutsCtrl,
-  templateUrl: "templates/sh-layouts.html"
+  templateUrl: 'templates/sh-layouts.html'
 }
 
 angular.module('shellderApp').component('shLayouts', shLayouts)

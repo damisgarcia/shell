@@ -2,7 +2,7 @@
 
 var shLayoutCtrl = function($element){
   var self = this
-  var html = ""
+  var html = ''
 
   self.$onInit = function(){
     angular.forEach(self.data, function(form){
@@ -19,7 +19,7 @@ shLayoutCtrl.$inject = []
 
 var shLayout = {
   bidding:{
-    data: "="
+    data: '='
   },
   controller: shLayoutCtrl
 }
