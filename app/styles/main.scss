@@ -2,6 +2,9 @@ $icon-font-path: '../fonts/';
 
 // bower:scss
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "bower_components/bourbon/app/assets/stylesheets/_bourbon.scss";
+@import "bower_components/sass-flex-mixin/_flex.scss";
+@import "bower_components/flexboxgrid-sass/flexboxgrid.scss";
 // endbower
 
 @import "layout";
@@ -17,6 +20,8 @@ $icon-font-path: '../fonts/';
 body {
   padding-top: 20px;
   padding-bottom: 20px;
+  min-width: 1380px;
+  background-color: white;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -102,5 +107,65 @@ nav.left-menu{
   height: 100%;
   display: flex;
   flex-direction: column;
-  @extend .col-xs-3;
+  width: 100%;
+  max-width: 330px;
+  padding: 1em;
+  z-index: 100;
+  background-color: rgb(250,250,250);
+}
+
+// Tabs
+.sh-tabs{
+  @include display(flex);
+  @include flex-direction(column);
+  flex: 1 20% 1;
+}
+
+.sh-galleries{
+  @include display(flex);
+  @include flex-direction(column);
+  flex: 1;
+  margin-top: 15px;
+
+  .panel-group{
+    .panel-collapse{
+      max-height: 400px;
+      overflow: auto;
+      padding-left: 2px;
+      padding-right: 2px;
+    }
+    .panel-body{
+      padding: 0px;
+    }
+  }
+}
+
+
+// Flicker Gallery
+sh-flickr-gallery{
+  @include display(flex);
+  @include flex-direction(column);
+  flex: 1;
+  .sh-flickr-gallery{
+    @include display(flex);
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+    @include justify-content(center);
+    overflow: hidden;
+    margin-left: -2px;
+    margin-right: -2px;
+    .sh-flickr-img{
+      width: 90px;
+      height: 100px;
+      margin: 4px 2px;
+      overflow: hidden;
+      @include box-sizing(border-box);
+      img{
+        transform: scale(3.0);
+        &:hover{
+          cursor: pointer;
+        }
+      }
+    }
+  }
 }

@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-2" ng-repeat="l in $ctrl.layouts">
+  <div class="col-xs-2" ng-repeat="l in $ctrl.layouts">
     <sh-layout ng-click="$ctrl.update(l)">
       <sh-layout-divider ng-repeat="divider in l" class='{{divider.type}}'>
         <sh-layout-rect ng-repeat="n in [] | range:divider.value"></sh-layout-rect>

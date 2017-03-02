@@ -28,9 +28,10 @@
     <![endif]-->
 
     <div class="container-fluid">
+
       <nav class='left-menu'>
         <!-- Primary Tab -->
-        <div>
+        <div class='sh-tabs'>
           <ul class="nav nav-tabs">
             <li><a data-toggle="tab" href="#devices">Devices</a></li>
             <li class="active"><a data-toggle="tab" href="#layouts">Layouts</a></li>
@@ -53,8 +54,13 @@
         </div>
 
         <!-- Secondary Tab -->
-        <sh-flickr-gallery></sh-flickr-gallery>
+        <div class="sh-galleries">
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <sh-flickr-gallery></sh-flickr-gallery>
+          </div>
+        </div>
       </nav>
+
       <div class="col-md-9 col-xs-offset-3">
         <div class="container">
           <sh-device></sh-device>

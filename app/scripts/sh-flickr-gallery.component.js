@@ -8,7 +8,16 @@ var shFlickrGalleryCtrl = function(Flickr){
   }
 
   self.$onInit = function(){
-    Flickr.photos.search({tags: "background,flowers,summer",per_page: 30}).then(function(response){
+    Flickr.photos.search({tags: "flowers, cats, dogs",per_page: 30, extras: "url_sq,url_t,url_s,url_q,url_m,url_n,url_z,url_c,url_l,url_o"}).then(function(response){
+      self.photos = response.data.photos.photo
+    })
+  }
+
+  self.search = function(e){
+    e.preventDefault()
+    // clear photos
+    self.photos = []
+    Flickr.photos.search({tags: self.terms ,per_page: 30, extras: "url_sq,url_t,url_s,url_q,url_m,url_n,url_z,url_c,url_l,url_o"}).then(function(response){
       self.photos = response.data.photos.photo
     })
   }
